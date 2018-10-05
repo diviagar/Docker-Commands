@@ -1,0 +1,12 @@
+Git     used in development phase
+Jenkins used in development phase and operation phase
+Docker  used in operation phase
+Service which is consumed by user is web app.
+Service which is consumed by code is web service.
+SOAP messages are in XML form.
+UDDI address
+WSDL gives protocols(formats) to connect client to server.
+Rest can return any type of data JSoN or XML.
+Rest 
+SOAP return only XML data. 
+Web Services and microservices differ in performance basis.
