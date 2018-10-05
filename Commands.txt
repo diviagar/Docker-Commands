@@ -1,0 +1,67 @@
+COMMANDS
+username->ec2-user
+
+1>mkdir mydocker
+2>sudo su
+3>mkdir mydocker
+4>ls
+5>cd mudocker
+6>docker -v
+
+*This command will tell that docker is installed in our machine or not -> docker -v
+Docker is a container which contains images(code+dependences). These can be shared through docker hub(http://hub.docker.com).
+Docker Hub is a site to share images. 
+Pull image from docker hub->docker pull image_name
+Always pull official image.
+All the dependencies will be put in Dockerfile.
+Docker Compose is going to give client and server information.
+
+
+Firstly create EC2 instance and connect it with putty
+1> To install docker->                       sudo yum install -y docker
+2> check for docker->                        docker -v
+3> command to start docker->                 sudo service docker start
+4> to pull image->                           docker pull imagename
+5> to run image->                            docker run imagename
+6> to stop service->                         sudo service docker stop
+7> To see all images that have been pulled-> docker images
+8> To run using image id->                   docker run imageid(this image id we will get from <docker images> command )
+9> To remove docker instance->               sudo yum remove docker
+10> To know running container->              docker ps
+11> to know all container names->            docker ps -a 
+12> To uninstall the docker->                sudo yum remove docker
+13> Add the EC2 user to your Docker group->  sudo usermod -a -G docker ec2-user
+
+sudo yum update –y
+
+
+
+How to create docker images:
+
+1> TO ckeck for files that are already created->  ls
+2> To create file->                               touch CapgeminiDOcker.java
+3> To check file created or not->                 ls
+4> To open the file->                             vi CapgeminiDocker.java
+Inside CapgeminiDocker:
+(
+Write code on virtual machine
+Press->       Esc 
+save n Exit->:wq
+)
+ 
+5> Run java project->                              javac CapgeminiDocker.java
+6> Create Dockerfile to store dependencies->       touch Dockerfile 
+7> To open file ->                                 vi Dockerfile
+
+Inside Dockerfile:
+(
+FROM java:8
+ADD  CapgeminiDocker.java CapgeminiDocker.java(adding file in container)
+RUN javac CapgeminiDocker.java(java file create)
+CMD java CapgeminiDocker(java file run)
+ESC
+:wq
+) 
+8> Command to buid image->                        docker build -t <imagename>:<version> [e.g. docker build -t myimage:1.0]
+9> Image will be created.
+          
